@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Collections.Generic;
 using System.Threading;
 using System.Linq;
@@ -26,6 +27,15 @@ namespace NotifyTorrentBullet
     {
         static void Main(string[] args)
         {
+
+        ServicePointManager.ServerCertificateValidationCallback +=
+        (sender, certificate, chain, sslPolicyErrors) =>
+        {
+        //Console.WriteLine(certificate.ToString());
+        return true;
+        };
+
+
             Console.WriteLine("Number of command line parameters = {0}", args.Length);
             if (args.Length < 2)
             {
