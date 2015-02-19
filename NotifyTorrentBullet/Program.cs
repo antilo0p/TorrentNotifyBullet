@@ -41,7 +41,7 @@ namespace NotifyTorrentBullet
 
             var client = new RestClient();
             client.BaseUrl = new Uri("https://api.pushbullet.com/v2/");            
-            //client.Authenticator = new HttpBasicAuthenticator("ixWnnw8FvdZ4gavn4h7Sdpx8uyvC09UU", "");
+            
             client.Authenticator = new HttpBasicAuthenticator(paramtoken, "");
             var request = new RestRequest("pushes", Method.POST);
             request.RequestFormat = DataFormat.Json;
